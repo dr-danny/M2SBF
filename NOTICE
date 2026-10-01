@@ -1,0 +1,17 @@
+M2SBF public-data research implementation
+Copyright 2026 Daniel Mehditash
+
+SCOPE OF THE APACHE-2.0 LICENSE
+
+The Apache License, Version 2.0 in the LICENSE file applies to the research package in research/ and to the documentation in this repository (README.md, CHANGELOG.md, CONTRIBUTING.md, SECURITY.md, CITATION.cff and docs/), in every revision of this repository.
+
+WHAT IT DOES NOT COVER
+
+Third-party data and standards. This project does not claim ownership of upstream catalogs, mappings or incident records, and the Apache License does not relicense them:
+   - NIST OSCAL content (CC0 / public domain)
+   - Center for Threat-Informed Defense mappings (Apache License 2.0)
+   - MITRE ATT&CK (MITRE terms of use)
+   - Verizon VCDB (Creative Commons Attribution-ShareAlike 4.0 International); derived record-level outputs and adaptations retain the CC BY-SA 4.0 attribution and share-alike requirements
+The CIS Controls and AICPA Trust Services Criteria are referenced by identifier only; no text of either is reproduced, and their owners' terms apply to the source documents.
+
+Exact sources, versions, digests, upstream license texts and change notices are in research/NOTICE.md, research/input-lock.json and research/licenses/. ATT&CK and other third-party names and marks remain the property of their owners; no endorsement is implied.

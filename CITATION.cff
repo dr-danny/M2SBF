@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "M2SBF: public-data research implementation"
+abstract: >-
+  Version-pinned, reproducible implementation of the analytics-assisted module
+  prioritization experiment that supports the praxis "Modern Modular Secure
+  Business Framework (M2SBF): An Analytics-Assisted Governance Architecture for
+  Small and Mid-Sized Businesses".
+authors:
+  - family-names: Mehditash
+    given-names: Daniel
+repository-code: "https://github.com/dr-danny/M2SBF"
+license: Apache-2.0
+version: v1.0.0
+date-released: 2026-09-30
+keywords:
+  - cybersecurity
+  - small business
+  - NIST SP 800-53
+  - MITRE ATT&CK
+  - risk prioritization
+  - reproducible research

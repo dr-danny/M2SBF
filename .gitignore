@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Downloaded inputs and generated outputs (see research/README.md)
+research-data/
+research-results/
+run-a/
+run-b/
+run-a.json
+run-b.json
+test.log
+
+# Editors and OS
+.idea/
+.vscode/
+.DS_Store
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+*token.json*
