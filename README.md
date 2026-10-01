@@ -38,7 +38,7 @@ See [`research/README.md`](research/README.md) for the methodology decisions and
 
 This repository is a clean public snapshot of the research package that supports the praxis. The complete development history, including earlier revisions of the package and an earlier demonstration prototype that is not part of this repository, is retained in a private provenance repository and is available to examiners on request.
 
-The `research/` directory here is byte-identical to the revision that produced the verified run cited by the praxis. Its Git tree hash is `bf88a47b5a65b91b04a8003c7c526ee72cc3a24e`, the same as `research/` at provenance commit `67b657a187848ebd5263177a18c87808e49a523b`. The release tag `v1.0.0` marks this snapshot. See [`CHANGELOG.md`](CHANGELOG.md) for how the provenance revisions map to this release.
+The `research/` directory here is byte-identical to the revision that produced the verified run cited by the praxis. Its Git tree hash is `bf88a47b5a65b91b04a8003c7c526ee72cc3a24e`, the same as `research/` at provenance commit `67b657a187848ebd5263177a18c87808e49a523b`. The release tag `v1.0.0` marks this snapshot and is archived on Zenodo: [10.5281/zenodo.23076620](https://doi.org/10.5281/zenodo.23076620). See [`CHANGELOG.md`](CHANGELOG.md) for how the provenance revisions map to this release.
 
 ## Tests and continuous integration
 
