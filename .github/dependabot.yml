@@ -1,0 +1,16 @@
+version: 2
+updates:
+  # Keeps the SHA-pinned GitHub Actions current. The shared Trivy workflow is
+  # pinned deliberately and is excluded from automatic bumps.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: ci
+    ignore:
+      - dependency-name: "MARFI-Systems/trivy-security-scan"
+    groups:
+      actions:
+        patterns:
+          - "*"
