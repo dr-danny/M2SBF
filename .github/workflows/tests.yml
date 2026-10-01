@@ -1,0 +1,72 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Weekly: confirms the locked public inputs are still served byte-for-byte.
+    - cron: "23 14 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.13"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Byte-compile the package
+        run: python -m compileall -q research
+
+      - name: Fetch and verify the locked public inputs
+        run: python -m research.fetch_inputs --dest research-data
+
+      - name: Run the full test suite (no test may be skipped)
+        run: |
+          python -m unittest discover -s research/tests -v 2>&1 | tee test.log
+          if grep -Eq "\.\.\. skipped|skipped=[0-9]" test.log; then
+            echo "::error::One or more tests were skipped; the locked inputs were not used"
+            exit 1
+          fi
+
+      - name: Two runs must produce identical results
+        run: |
+          python -m research.pipeline --inputs research-data --out run-a > run-a.json
+          python -m research.pipeline --inputs research-data --out run-b > run-b.json
+          python - <<'PY'
+          import json
+          a, b = (json.load(open(f"run-{x}.json")) for x in "ab")
+          assert a["semantic_output_sha256"] == b["semantic_output_sha256"], "outputs differ between runs"
+          assert a["run_id"] == b["run_id"], "run ids differ between runs"
+          print("semantic_output_sha256", a["semantic_output_sha256"])
+          PY
+
+      - name: Run matches the one cited by the praxis
+        run: |
+          python - <<'PY'
+          import json
+          a = json.load(open("run-a.json"))
+          assert a["run_id"] == "eb2060dd7639f478a2a1ab479c3774c545094b4235d5af987ee9c2e6f9e3b0be", a["run_id"]
+          assert a["semantic_output_sha256"] == "50e6af0f863a640255b1122fd9da9af53bf2cd60580b9497f82a80f05f1a57bc", a["semantic_output_sha256"]
+          print("matches the praxis-cited run")
+          PY

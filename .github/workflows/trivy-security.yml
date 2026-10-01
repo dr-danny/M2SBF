@@ -1,0 +1,30 @@
+name: Trivy Security Scan
+
+# Calls the shared MARFI-Systems Trivy workflow (public reusable workflow).
+# It is pinned to a full commit SHA rather than a branch so the code that runs against this
+# repository cannot change silently. To update, review the new commits in
+# MARFI-Systems/trivy-security-scan and then change the SHA deliberately.
+#
+# Pinned to 7446cde (2026-09-10): runs on GitHub-hosted runners (ubuntu-latest). The newer
+# 100ae94 (2026-09-21) differs only by running on Monk CI runners, which are not installed
+# for this personal account, so jobs would wait for a runner that never arrives.
+# Its actions are SHA-pinned: checkout v4.4.0, trivy-action v0.36.0 (Trivy v0.70.0),
+# github-script v7.1.0.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '17 13 * * 1' # Mondays 13:17 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  trivy:
+    uses: MARFI-Systems/trivy-security-scan/.github/workflows/trivy-scan.yml@7446cde8b4ca7180b65edd23f6e9fb16d1853916
+    permissions:
+      contents: read
+      issues: write
