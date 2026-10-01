@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "provenance": {
+    "basis": "M2SBF taxonomy from GitHub main4a63a31",
+    "change": "CC9.1 added to governance module, consistent with existing criterion-to-domain lookup; CIS v8 IG1 source reconciliation on 2026-09-26 removes out-of-scope 16.1 from Configuration Management and assigns missing 14.8 to Security Awareness & Training",
+    "status": "Taxonomy identifiers only. Counts and NIST technique coverage are recomputed from pinned public inputs. CIS/SOC2 identifiers are not proof of semantic equivalence or audit compliance.",
+    "cis_ig1_source": {
+      "url": "https://learn.cisecurity.org/l/799323/2021-05-18/47qgv",
+      "edition": "CIS Controls v8 (May 2021)",
+      "sha256": "461c258158a66dba5d9f45eaabf9100c69b3de37f70827811fb7a7fd538ee43d",
+      "selection": "Controls V8 sheet: safeguard identifier in column B and x in IG1 column G; 14.8 at row 132 is included, 16.1 at row 143 is not"
+    }
+  },
+  "modules": [
+    {
+      "id": "M2SBF-IAM",
+      "name": "Identity & Access Management",
+      "nist_families": [
+        "AC",
+        "IA"
+      ],
+      "cis_safeguards": [
+        "3.3",
+        "4.3",
+        "4.7",
+        "5.1",
+        "5.2",
+        "5.3",
+        "5.4",
+        "6.1",
+        "6.2",
+        "6.3",
+        "6.4",
+        "6.5"
+      ],
+      "soc2_criteria": [
+        "CC6.1",
+        "CC6.2",
+        "CC6.3"
+      ]
+    },
+    {
+      "id": "M2SBF-DAT",
+      "name": "Data Protection",
+      "nist_families": [
+        "MP",
+        "PT"
+      ],
+      "cis_safeguards": [
+        "3.1",
+        "3.2",
+        "3.4",
+        "3.5",
+        "3.6"
+      ],
+      "soc2_criteria": [
+        "CC6.5",
+        "CC6.7"
+      ]
+    },
+    {
+      "id": "M2SBF-NET",
+      "name": "Network Security",
+      "nist_families": [
+        "SC"
+      ],
+      "cis_safeguards": [
+        "4.4",
+        "4.5",
+        "9.1",
+        "9.2",
+        "12.1"
+      ],
+      "soc2_criteria": [
+        "CC6.6"
+      ]
+    },
+    {
+      "id": "M2SBF-END",
+      "name": "Endpoint Protection",
+      "nist_families": [],
+      "cis_safeguards": [
+        "2.3",
+        "10.1",
+        "10.2",
+        "10.3"
+      ],
+      "soc2_criteria": [
+        "CC6.8"
+      ]
+    },
+    {
+      "id": "M2SBF-LOG",
+      "name": "Logging & Monitoring",
+      "nist_families": [
+        "AU"
+      ],
+      "cis_safeguards": [
+        "8.1",
+        "8.2",
+        "8.3"
+      ],
+      "soc2_criteria": [
+        "CC4.1",
+        "CC7.1",
+        "CC7.2"
+      ]
+    },
+    {
+      "id": "M2SBF-INC",
+      "name": "Incident Response",
+      "nist_families": [
+        "IR"
+      ],
+      "cis_safeguards": [
+        "17.1",
+        "17.2",
+        "17.3"
+      ],
+      "soc2_criteria": [
+        "CC7.3",
+        "CC7.4"
+      ]
+    },
+    {
+      "id": "M2SBF-VUL",
+      "name": "Vulnerability Management",
+      "nist_families": [
+        "SI"
+      ],
+      "cis_safeguards": [
+        "2.2",
+        "7.1",
+        "7.2",
+        "7.3",
+        "7.4"
+      ],
+      "soc2_criteria": [
+        "CC7.5"
+      ]
+    },
+    {
+      "id": "M2SBF-CFG",
+      "name": "Configuration Management",
+      "nist_families": [
+        "CM",
+        "MA"
+      ],
+      "cis_safeguards": [
+        "4.1",
+        "4.2",
+        "4.6"
+      ],
+      "soc2_criteria": [
+        "CC5.2",
+        "CC8.1"
+      ]
+    },
+    {
+      "id": "M2SBF-AWR",
+      "name": "Security Awareness & Training",
+      "nist_families": [
+        "AT"
+      ],
+      "cis_safeguards": [
+        "14.1",
+        "14.2",
+        "14.3",
+        "14.4",
+        "14.5",
+        "14.6",
+        "14.7",
+        "14.8"
+      ],
+      "soc2_criteria": [
+        "CC1.4"
+      ]
+    },
+    {
+      "id": "M2SBF-BCP",
+      "name": "Business Continuity & Recovery",
+      "nist_families": [
+        "CP"
+      ],
+      "cis_safeguards": [
+        "11.1",
+        "11.2",
+        "11.3",
+        "11.4"
+      ],
+      "soc2_criteria": []
+    },
+    {
+      "id": "M2SBF-PHY",
+      "name": "Physical Security",
+      "nist_families": [
+        "PE"
+      ],
+      "cis_safeguards": [],
+      "soc2_criteria": [
+        "CC6.4"
+      ]
+    },
+    {
+      "id": "M2SBF-GOV",
+      "name": "Governance & Risk Management",
+      "nist_families": [
+        "CA",
+        "PL",
+        "PM",
+        "PS",
+        "RA"
+      ],
+      "cis_safeguards": [],
+      "soc2_criteria": [
+        "CC1.1",
+        "CC1.2",
+        "CC1.3",
+        "CC1.5",
+        "CC2.1",
+        "CC2.2",
+        "CC2.3",
+        "CC3.1",
+        "CC3.2",
+        "CC3.3",
+        "CC3.4",
+        "CC4.2",
+        "CC5.1",
+        "CC5.3",
+        "CC9.1"
+      ]
+    },
+    {
+      "id": "M2SBF-SCM",
+      "name": "Supply Chain & Vendor Management",
+      "nist_families": [
+        "SA",
+        "SR"
+      ],
+      "cis_safeguards": [
+        "15.1"
+      ],
+      "soc2_criteria": [
+        "CC9.2"
+      ]
+    },
+    {
+      "id": "M2SBF-AST",
+      "name": "Asset Management",
+      "nist_families": [],
+      "cis_safeguards": [
+        "1.1",
+        "1.2",
+        "2.1"
+      ],
+      "soc2_criteria": []
+    }
+  ]
+}

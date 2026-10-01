@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "status": "new research specification fixed before outcome computation; not historical preregistration",
+  "manuscript_basis": "v16 Sections 3.3-3.7, not contradictory Appendix A hand-weighted engine",
+  "baseline_repository_commit": "4a63a31b633b0713f7e1d286b9176da371e73925",
+  "seed": 42,
+  "sectors": {
+    "professional": ["54"],
+    "manufacturing": ["31", "32", "33"],
+    "retail": ["44", "45"],
+    "hospitality": ["72"]
+  },
+  "eligibility": {
+    "source_statuses": ["validated", "overridden"],
+    "veris_version": "1.4.0",
+    "attack_version": "16.1",
+    "duplicate_id_policy": "exclude all records in repeated nonempty incident_id groups across eligible source statuses, rather than arbitrarily selecting a record",
+    "missing_id_policy": "exclude and audit",
+    "employee_filter": null,
+    "population_label": "publicly disclosed target-industry file records; not SME-qualified organizations or confirmed observed ATT&CK techniques"
+  },
+  "mapping": {
+    "variety_only": true,
+    "exclude_enumerations": ["Unknown", "Other"],
+    "normalize_before_credit": true,
+    "normalization": "active Enterprise IDs; roll up subtechniques to active parent; omit techniques with only reconnaissance/resource-development tactics",
+    "path_credit": "1 / number of unique retained parent techniques for this variety path",
+    "incident_credit": "maximum credit across paths for each technique, not a sum",
+    "sector_frequency": "sum incident-technique fractional credits divided by number of mapped records",
+    "bootstrap_eligibility": "only records retaining at least one technique credit",
+    "coverage": "CTID complete mitigates mappings on exact Low control IDs; no enhancement inheritance; same parent normalization as incident mapping",
+    "native_mitigation_supplement": "disabled because complete author module-to-mitigation mapping is unspecified and asymmetric supplement would bias the traditional comparison",
+    "missing_mapping_meaning": "not represented by this crosswalk, not zero security value or guaranteed residual risk"
+  },
+  "profiles": {
+    "loop_order": ["sector insertion order", "maturity", "resource"],
+    "maturity": ["nascent", "developing", "established"],
+    "resource": ["constrained", "moderate", "adequate"],
+    "preimplemented_module_counts": [0, 2, 4],
+    "preimplemented_order": "first distinct module in natural NIST family/control order, with any unmapped taxonomy modules appended by ID",
+    "bootstrap_seed": "seed * 1000 + zero_based_profile_index",
+    "bootstrap_draws": "number of mapped records in the sector pool, with replacement",
+    "employee_count": "omitted; no unsupported organizational-size effect is introduced",
+    "resource_effect": "metadata only; no effort or scoring multiplier"
+  },
+  "evaluation": {
+    "milestones": [0.25, 0.5, 0.75, 1.0],
+    "rounding": "ceil(fraction * remaining units)",
+    "ranking": "descending standalone sum of profile technique frequencies; ascending module ID tie break; not marginal-gain greedy",
+    "weighted_gap_universe": "all parent techniques retained in the eligible mapped four-sector corpus; not just Top25",
+    "top25": "descriptive pooled-frequency view only, weights normalized by largest pooled raw credit",
+    "module_comparison": "analytics versus fixed NIST-derived module sequence, equal remaining-module counts; report unequal underlying control counts, no effort interpretation",
+    "matched_control_comparison": "flatten analytics-ordered modules into their NIST controls versus NIST natural control order; equal remaining-control counts and identical preimplemented controls",
+    "module_without_controls": "taxonomy member retained and reported; receives no CTID-derived technique credit",
+    "in_sample": "manuscript-style bootstrap used for both ranking and evaluation; descriptive fit to sampled evidence, not out-of-sample validation",
+    "held_out_companion": "seeded 70/30 per-sector source-ID split; bootstrap training records only, evaluate on fixed held-out sector frequencies; paired summaries are descriptive and share held-out pools",
+    "training_fraction": 0.7
+  },
+  "graph": {
+    "edges": "explicit OSCAL related-control links whose endpoints are both in selected Low catalog",
+    "meaning": "cross-reference graph, not implementation prerequisites",
+    "report": ["nodes", "unique directed edges", "self links", "SCC count", "largest SCC size", "longest condensation path in components and edges", "projected cross-module edges", "collapsed duplicate cross-module edges"],
+    "forbidden_label": "largest SCC called a linear chain or implementation sequence"
+  },
+  "statistics": {
+    "primary_outputs": "descriptive paired gaps, improved/tied/worse counts, all-pair and nonzero medians",
+    "optional_signed_rank": "exact two-sided conditional sign-randomization using average tied ranks and drop-zero policy; explicitly differs from unspecified SciPy approximate tie handling",
+    "interpretation": "conditional simulation statistic, not inference from 36 independent observed organizations",
+    "zero_tolerance": 1e-12,
+    "hypothesis_acceptance": "not automatically determined; provenance and confirmatory chronology remain unresolved"
+  },
+  "do_not_fit": ["control totals", "incident counts", "mapped-record counts", "technique universe size", "module coverage sizes", "SCC sizes", "gap values", "rankings", "p values", "effect sizes", "hypothesis outcomes"],
+  "not_implemented_as_evidence": ["CIS/SOC2 graph or complexity composites from unequal proxies", "automatic H3 governance-rubric scores", "labor savings", "breach reduction", "adoption outcomes"]
+}

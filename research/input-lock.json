@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "purpose": "New pinned research input acquisition, not historical replication",
+  "files": [
+    {
+      "role": "nist_catalog",
+      "path": "nist-ctid/NIST_SP-800-53_rev5_catalog.json",
+      "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/78650f02ad9321bb7b817846f8fbd4f2bcd620de/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_catalog.json",
+      "sha256": "01f37cf90ea99d92242c936cbfbdebcc338eef1f71454e2acac36cc56e9bc062",
+      "bytes": 10442037,
+      "commit": "78650f02ad9321bb7b817846f8fbd4f2bcd620de",
+      "license": "CC0-1.0 / US public domain",
+      "version": "5.2.0; OSCAL 1.2.2"
+    },
+    {
+      "role": "nist_low_profile",
+      "path": "nist-ctid/NIST_SP-800-53_rev5_LOW-baseline_profile.json",
+      "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/78650f02ad9321bb7b817846f8fbd4f2bcd620de/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_LOW-baseline_profile.json",
+      "sha256": "8fd206017c8d718b44bdef612c2ff321a9fd84d97a515c8ec33c4619accbef6e",
+      "bytes": 7234,
+      "commit": "78650f02ad9321bb7b817846f8fbd4f2bcd620de",
+      "license": "CC0-1.0 / US public domain",
+      "version": "5.2.0; OSCAL 1.2.2"
+    },
+    {
+      "role": "nist_low_resolved",
+      "path": "nist-ctid/NIST_SP-800-53_rev5_LOW-baseline-resolved-profile_catalog.json",
+      "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/78650f02ad9321bb7b817846f8fbd4f2bcd620de/nist.gov/SP800-53/rev5/json/NIST_SP-800-53_rev5_LOW-baseline-resolved-profile_catalog.json",
+      "sha256": "6c4a292a358f436a7534e340e0e9f7ee1faa57ff1d3936fbab250cc08c1d85ed",
+      "bytes": 2631225,
+      "commit": "78650f02ad9321bb7b817846f8fbd4f2bcd620de",
+      "license": "CC0-1.0 / US public domain",
+      "version": "5.2.0; OSCAL 1.2.2"
+    },
+    {
+      "role": "nist_license",
+      "path": "nist-ctid/NIST-LICENSE.md",
+      "url": "https://raw.githubusercontent.com/usnistgov/oscal-content/78650f02ad9321bb7b817846f8fbd4f2bcd620de/LICENSE.md",
+      "sha256": "9f0ddd1ed71f691bb483965a7c46e1315ab6cc28dac0426d4c3d27108aafde13",
+      "bytes": 2106,
+      "commit": "78650f02ad9321bb7b817846f8fbd4f2bcd620de",
+      "license": "CC0-1.0 / US public domain",
+      "version": null
+    },
+    {
+      "role": "nist_attack",
+      "path": "nist-ctid/nist_800_53-rev5_attack-16.1-enterprise.json",
+      "url": "https://raw.githubusercontent.com/center-for-threat-informed-defense/mappings-explorer/705ca1b87954f9ff8d9eda62fb70b89939331407/mappings/nist_800_53/attack-16.1/nist_800_53-rev5/enterprise/nist_800_53-rev5_attack-16.1-enterprise.json",
+      "sha256": "355ae97d309c00eb2428e5af07754ff4ca16cfe63928194081d0e883aed929c8",
+      "bytes": 2006895,
+      "commit": "705ca1b87954f9ff8d9eda62fb70b89939331407",
+      "license": "Apache-2.0",
+      "version": "NIST rev5 / ATT&CK 16.1; mapping version blank"
+    },
+    {
+      "role": "ctid_license",
+      "path": "nist-ctid/CTID-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/center-for-threat-informed-defense/mappings-explorer/705ca1b87954f9ff8d9eda62fb70b89939331407/LICENSE.txt",
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+      "bytes": 10174,
+      "commit": "705ca1b87954f9ff8d9eda62fb70b89939331407",
+      "license": "Apache-2.0",
+      "version": "NIST rev5 / ATT&CK 16.1; mapping version blank"
+    },
+    {
+      "role": "attack_stix",
+      "path": "nist-ctid/enterprise-attack-16.1.json",
+      "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/7eb3ca57f218e1d4f01afdb3e0cdc3b526556173/enterprise-attack/enterprise-attack-16.1.json",
+      "sha256": "8423d8dac3fc2feb825bb07d26e5f5d905e08a88f6fe4652cc20834cbe982813",
+      "bytes": 46485155,
+      "commit": "7eb3ca57f218e1d4f01afdb3e0cdc3b526556173",
+      "license": "LicenseRef-MITRE-ATTACK (see ATTACK-LICENSE.txt)",
+      "version": "16.1"
+    },
+    {
+      "role": "attack_license",
+      "path": "nist-ctid/ATTACK-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/7eb3ca57f218e1d4f01afdb3e0cdc3b526556173/LICENSE.txt",
+      "sha256": "34e9157d34621fd906a94be24182396b9edf50cd2c8bcfa8c0cfb73d33c4195b",
+      "bytes": 1359,
+      "commit": "7eb3ca57f218e1d4f01afdb3e0cdc3b526556173",
+      "license": "LicenseRef-MITRE-ATTACK (see ATTACK-LICENSE.txt)",
+      "version": "16.1"
+    },
+    {
+      "role": "vcdb_license",
+      "path": "vcdb-veris/sources/vcdb/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/vz-risk/VCDB/230cf22b56a481dd1a994b21e4d94c59e2bccea9/LICENSE.txt",
+      "sha256": "55c550adb50e82c87f8aeb6706b6b778e8657cf49593167c9d2bfbc270323182",
+      "bytes": 14107,
+      "commit": "230cf22b56a481dd1a994b21e4d94c59e2bccea9",
+      "license": "CC-BY-SA-4.0",
+      "version": null
+    },
+    {
+      "role": "veris_attack",
+      "path": "vcdb-veris/sources/explorer/mappings/veris/attack-16.1/veris-1.4.0/enterprise/veris-1.4.0_attack-16.1-enterprise.json",
+      "url": "https://raw.githubusercontent.com/center-for-threat-informed-defense/mappings-explorer/705ca1b87954f9ff8d9eda62fb70b89939331407/mappings/veris/attack-16.1/veris-1.4.0/enterprise/veris-1.4.0_attack-16.1-enterprise.json",
+      "sha256": "29c5db7e6bd4fc11bde18ff7ec04a6458093085c437b8a55b24e025569799355",
+      "bytes": 538665,
+      "commit": "705ca1b87954f9ff8d9eda62fb70b89939331407",
+      "license": "Apache-2.0",
+      "version": "VERIS1.4.0/ATTACK16.1"
+    },
+    {
+      "role": "vcdb_archive",
+      "path": "vcdb-veris/sources/vcdb/full-repository.tar.gz",
+      "url": "https://codeload.github.com/vz-risk/VCDB/tar.gz/230cf22b56a481dd1a994b21e4d94c59e2bccea9",
+      "sha256": "5482883837cf02bb3792eff3d6b25ec59d9d72f5c081efaed18d7efbfdadf4c7",
+      "bytes": 48988024,
+      "commit": "230cf22b56a481dd1a994b21e4d94c59e2bccea9",
+      "license": "CC-BY-SA-4.0",
+      "version": null
+    }
+  ]
+}
